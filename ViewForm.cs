@@ -59,6 +59,15 @@ namespace MyVocabulary
             }
             fileWriter.Close();
         }
+
+        private void resetbutton_Click(object sender, EventArgs e)
+        {
+            englishText.Clear();
+            translationText.Clear();
+            transcriptionText.Clear();
+            referencesText.Clear();
+            noteText.Clear();
+        }
     }
     public class Word
     {

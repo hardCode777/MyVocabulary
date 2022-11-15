@@ -46,9 +46,11 @@ namespace MyVocabulary
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(98, 288);
+            this.viewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.viewButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.viewButton.Location = new System.Drawing.Point(81, 288);
             this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.Size = new System.Drawing.Size(92, 60);
             this.viewButton.TabIndex = 1;
             this.viewButton.Text = "VIEW";
             this.viewButton.UseVisualStyleBackColor = true;
@@ -56,9 +58,11 @@ namespace MyVocabulary
             // 
             // exerciseButton
             // 
-            this.exerciseButton.Location = new System.Drawing.Point(320, 288);
+            this.exerciseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exerciseButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exerciseButton.Location = new System.Drawing.Point(328, 288);
             this.exerciseButton.Name = "exerciseButton";
-            this.exerciseButton.Size = new System.Drawing.Size(75, 23);
+            this.exerciseButton.Size = new System.Drawing.Size(87, 60);
             this.exerciseButton.TabIndex = 2;
             this.exerciseButton.Text = "Exercise";
             this.exerciseButton.UseVisualStyleBackColor = true;

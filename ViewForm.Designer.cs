@@ -29,6 +29,7 @@ namespace MyVocabulary
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewForm));
             this.englishWordsList = new System.Windows.Forms.ListBox();
             this.englishText = new System.Windows.Forms.TextBox();
             this.translationText = new System.Windows.Forms.TextBox();
@@ -36,7 +37,8 @@ namespace MyVocabulary
             this.referencesText = new System.Windows.Forms.TextBox();
             this.noteText = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.resetbutton = new System.Windows.Forms.Button();
+            this.Delbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // englishWordsList
@@ -94,6 +96,7 @@ namespace MyVocabulary
             // 
             // addButton
             // 
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addButton.Location = new System.Drawing.Point(368, 361);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 46);
@@ -102,21 +105,37 @@ namespace MyVocabulary
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addNewWord);
             // 
-            // button2
+            // resetbutton
             // 
-            this.button2.Location = new System.Drawing.Point(594, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.resetbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.resetbutton.Location = new System.Drawing.Point(594, 361);
+            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Size = new System.Drawing.Size(75, 46);
+            this.resetbutton.TabIndex = 7;
+            this.resetbutton.Text = "Reset";
+            this.resetbutton.UseVisualStyleBackColor = true;
+            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
+            // 
+            // Delbutton
+            // 
+            this.Delbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Delbutton.BackgroundImage")));
+            this.Delbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Delbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delbutton.Location = new System.Drawing.Point(484, 361);
+            this.Delbutton.Name = "Delbutton";
+            this.Delbutton.Size = new System.Drawing.Size(64, 64);
+            this.Delbutton.TabIndex = 8;
+            this.Delbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Delbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.Delbutton.UseVisualStyleBackColor = true;
             // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Delbutton);
+            this.Controls.Add(this.resetbutton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.noteText);
             this.Controls.Add(this.referencesText);
@@ -143,6 +162,7 @@ namespace MyVocabulary
         private System.Windows.Forms.TextBox referencesText;
         private System.Windows.Forms.TextBox noteText;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button resetbutton;
+        private System.Windows.Forms.Button Delbutton;
     }
 }
