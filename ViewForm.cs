@@ -26,11 +26,24 @@ namespace MyVocabulary
             upDate = CreateButton("Update",new Point(x,y), new Size(64,40), Update_Click);
             this.Controls.Add(upDate);
             //
-            
+            y = resetbutton.Top - 45;
+            x = upDate.Right;
+            sortButton = CreateCB(new Point(x, y), new Size(70, 40), ComboBox_SelectedIndexChanged);
+            sortButton.Items.Add("A-z");
+            sortButton.Items.Add("Z-a");
+            //sortButton.Items.Add
+            this.Controls.Add(sortButton);
             //
             englishWordsList.SelectedIndexChanged += EnglishWordsList_SelectedIndexChanged; // eventhandler
             //
             this.words = words;
+            LoadList();
+
+        }
+
+        public void LoadList()
+        {
+            englishWordsList.Items.Clear();
             for (int i = 0; i < words.Count; i++)
             {
                 englishWordsList.Items.Add(words[i].EnglishWord);
@@ -38,11 +51,8 @@ namespace MyVocabulary
             if (englishWordsList.Items.Count > 0)
             {
                 englishWordsList.SelectedIndex = 0;
-
             }
-
         }
-
         private void EnglishWordsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = englishWordsList.SelectedIndex;
@@ -71,15 +81,10 @@ namespace MyVocabulary
             words[index].Examples = noteText.Text;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+       
+       
 
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void addNewWord(object sender, EventArgs e)
         {
@@ -133,6 +138,29 @@ namespace MyVocabulary
             button.Click += handler;
             return button;
         }
+        private ComboBox CreateCB(Point location, Size size, EventHandler handler)
+        {
+            ComboBox comBox = new ComboBox();
+            comBox.Location = location;
+            comBox.Size = size;
+            comBox.Click += handler;
+            comBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            return comBox;
+        }
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (sortButton.SelectedIndex)
+            {
+                case 0:
+                    words.SortAz();
+                    break;
+                case 1:
+                    words.SortZa();
+                    break;
+            }
+            LoadList();
+        }
+
     }
 }
    

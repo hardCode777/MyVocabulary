@@ -74,7 +74,7 @@ namespace MyVocabulary
             this.transcriptionText.Name = "transcriptionText";
             this.transcriptionText.Size = new System.Drawing.Size(294, 32);
             this.transcriptionText.TabIndex = 3;
-            this.transcriptionText.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            
             // 
             // referencesText
             // 
@@ -92,7 +92,7 @@ namespace MyVocabulary
             this.noteText.Name = "noteText";
             this.noteText.Size = new System.Drawing.Size(294, 67);
             this.noteText.TabIndex = 5;
-            this.noteText.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            
             // 
             // addButton
             // 
@@ -109,10 +109,10 @@ namespace MyVocabulary
             // 
             this.resetbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetbutton.Location = new System.Drawing.Point(594, 361);
-            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Name = "clearbutton";
             this.resetbutton.Size = new System.Drawing.Size(75, 46);
             this.resetbutton.TabIndex = 7;
-            this.resetbutton.Text = "Reset";
+            this.resetbutton.Text = "Clear";
             this.resetbutton.UseVisualStyleBackColor = true;
             this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
             // 

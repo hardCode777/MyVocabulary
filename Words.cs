@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace MyVocabulary
 {
-    public class Words /*: IEnumerable<Word>*/
+    public class Words 
     {
         const string fileName= "vocabuary.txt";
         List<Word> words;
@@ -32,10 +32,7 @@ namespace MyVocabulary
         public void WriteFile()
         {
             StreamWriter fileWriter = new StreamWriter(fileName);
-            //for (int i = 0; i < length; i++)
-            //{
-
-            //}
+            
             for (int i = 0; i < words.Count; i++)
             {
                 fileWriter.WriteLine
@@ -63,13 +60,24 @@ namespace MyVocabulary
                 stringS = reader.ReadLine();
             }
             reader.Close();
+            
         }
+        public void SortAz()
+        {
+            words.Sort(new WorsComparerAZ());
+        }
+        public void SortZa()
+        {
+            words.Sort(new WorsComparerZA());
+        }
+
         //public IEnumerator <Words>GetEnumerator() => (Word)words.GetEnumerator();
         //IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        
+
     }
     public class Word
     {
+        // поле для фиксации даты 
         string englishWord;
         string translationWord;
         public string Transcription { get; set; }
@@ -111,6 +119,21 @@ namespace MyVocabulary
             Reference = refer;
             Examples = note;
         }
-
+        
     }
+    class WorsComparerAZ : IComparer<Word>
+    {
+        public int Compare (Word w1, Word w2)
+        {
+            return  string.Compare(w1.EnglishWord, w2.EnglishWord); //
+        }
+    }
+    class WorsComparerZA : IComparer<Word>
+    {
+        public int Compare(Word w1, Word w2)
+        {
+            return - string.Compare(w1.EnglishWord, w2.EnglishWord); //
+        }
+    }
+
 }
