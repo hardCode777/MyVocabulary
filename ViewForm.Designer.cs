@@ -65,7 +65,7 @@ namespace MyVocabulary
             this.translationText.Name = "translationText";
             this.translationText.Size = new System.Drawing.Size(294, 32);
             this.translationText.TabIndex = 2;
-            this.translationText.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            
             // 
             // transcriptionText
             // 
@@ -128,6 +128,7 @@ namespace MyVocabulary
             this.Delbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Delbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.Delbutton.UseVisualStyleBackColor = true;
+            this.Delbutton.Click += new System.EventHandler(this.Delbutton_Click);
             // 
             // ViewForm
             // 

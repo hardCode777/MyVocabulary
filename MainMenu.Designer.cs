@@ -66,13 +66,14 @@ namespace MyVocabulary
             this.exerciseButton.TabIndex = 2;
             this.exerciseButton.Text = "Exercise";
             this.exerciseButton.UseVisualStyleBackColor = true;
+            this.exerciseButton.Click += new System.EventHandler(this.exerciseButton_Click);
             // 
             // counterLabel
             // 
             this.counterLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.counterLabel.Location = new System.Drawing.Point(200, 165);
+            this.counterLabel.Location = new System.Drawing.Point(196, 160);
             this.counterLabel.Name = "counterLabel";
-            this.counterLabel.Size = new System.Drawing.Size(100, 23);
+            this.counterLabel.Size = new System.Drawing.Size(109, 23);
             this.counterLabel.TabIndex = 4;
             // 
             // MainMenu
@@ -89,6 +90,7 @@ namespace MyVocabulary
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Vocabulary";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

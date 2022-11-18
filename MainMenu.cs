@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace MyVocabulary
 {
+    
     public partial class MainMenu : Form
     {
+        Words words = new Words();
         public MainMenu()
         {
             InitializeComponent();
@@ -19,8 +23,26 @@ namespace MyVocabulary
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-            ViewForm viewForm = new ViewForm();
+            ViewForm viewForm = new ViewForm(words);
             viewForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Text");
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            words.ReadFile();
+            counterLabel.Text = words.Count.ToString();
+        }
+
+        private void exerciseButton_Click(object sender, EventArgs e)
+        {
+            ExerciseForm exerciseForm = new ExerciseForm(words);
+            exerciseForm.ShowDialog();
+        }
     }
+
 }

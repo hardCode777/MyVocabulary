@@ -57,28 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Delbutton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAA/hJREFUeF7tmzFoFUEQhh8hhCBBLERCEBEJQSRYWFhKEIsUwcLS0kIsREQsrMQ6
-        hUUQSWlpISIiIkFExEJEREREQghBLEIIQURERIjfD3PLOlnjvby75F6yP3yQzMzNzk7u7l3u7bbq1mqr
-        tRsuwhN4D59g1piPmDPbB3gG12CfpelOMYGzsAirG+QbXIUeS9k9ouhJm0QV3IVeS918UeyVqPiqmLL0
-        zRaFDsOPqPCq+A1jNkxzRZG3oqJjdGM7A8fgMIwY+vkIjIJ84/AAUjlmbJhmigJ7IHXT04TaupERfzs6
-        vkBnQXM/GShOf9FU0SMWUloco49PfQr4fBMW0jxR3JgrVnw2d9vi2Oculzhv7s0VA/dB/3+YAF/wR0jF
-        luER+HyXIRUbo1qreXYg0Q3Qda07+0/4tQ463X3BIhVbhlQ+2VKxBapRtS7DNPTZVNoXB58EX0C3sfFL
-        hoP1GJpK2k1M23TaFwdfd8m6kTs2nfLioOIh5V8PNd3EfSjmU+7/CQJ1M0kl63YO2hTXF4G6k6YSdDv7
-        bYrri8Dv7sDtwpBNcX0RmHoE3Q6U+z+CwBl4DW9Br7H0mson02UiXxNI/cH06k2+d/AGXsEem2J74kA9
-        Wvob46y5t1zU8tjVJobN3blIlhsAuQFRcrHjGuCfDebMHYRtAE47jps7CNshFyNGzR2E7aiLEWvu5Nj0
-        nUNcm6i0Ab3gX3TOmzsIm97vxTHiobmDsF1yMeKmuYOwTbkYMW7uIGz61PJx5Z76yohkuQGQGxAlF7kB
-        5g7ClhvgYkRugLmDsOUGuBiRG2DuIGyNbsCCuYOwbVUD9MWrjztg7s5FMjXAvyXKDTB3ELbcABcjcgPM
-        HYQtN8DFiNwAcwdhK9uA1DqC2huwZuEDth3VgC/mDsK2bRugxU/+3XvTGzBk7s5FstwAaHIDXrgYsaMa
-        8NLFiNobsGjuIGy5AS5G5AaYOwhbboCLEZ00QF99+7hBc3cukqkBX6PkYsncQdia1IDqFlWTLNWAZXMH
-        YdtRDVgxdxC2rWqAVrP4uNoboN//WpDM7/oWWd/8xqy5FrFpKbyP22vuINlcjNhl7iBsWsoT1yZqb4Bu
-        io3YyEQdWgsU1yZqb4DeEm98JXaFog7tN4xrE7U3QJRbeFijqEH7A1aimgqqa4BEwtR1pgcQXZebfilo
-        TBiEe+DrWoJ+C61GJLwQDeDRJoZiI0OxYUEvUAp0v9AZ1A46Js6hnMqtMYrxRKqeSSu7OpFUp5q2v6QG
-        bBLaKVLt6V+IxNrbpwFSAzcBnSWnrNx6xADa5Kjlp6kCtpIFOGFl1isG0gPPOXgKWpMbb4PfTPTxp7dB
-        2kk2YOW1oVbrD4dHL7OiVVeBAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

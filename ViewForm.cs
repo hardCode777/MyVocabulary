@@ -11,15 +11,64 @@ namespace MyVocabulary
 {
     public partial class ViewForm : Form
     {
-        List<Word> words = new List<Word>();
-        public ViewForm()
+        Words words;
+        Button upDate;
+        ComboBox sortButton;
+
+
+        public ViewForm(Words words)
         {
+
             InitializeComponent();
+            //
+            int x = Delbutton.Left;
+            int y = Delbutton.Top - 45;
+            upDate = CreateButton("Update",new Point(x,y), new Size(64,40), Update_Click);
+            this.Controls.Add(upDate);
+            //
+            
+            //
+            englishWordsList.SelectedIndexChanged += EnglishWordsList_SelectedIndexChanged; // eventhandler
+            //
+            this.words = words;
+            for (int i = 0; i < words.Count; i++)
+            {
+                englishWordsList.Items.Add(words[i].EnglishWord);
+            }
+            if (englishWordsList.Items.Count > 0)
+            {
+                englishWordsList.SelectedIndex = 0;
+
+            }
+
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void EnglishWordsList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index = englishWordsList.SelectedIndex;
+            if (index == -1)
+            {
+                return;
+            }
+            englishText.Text = words[index].EnglishWord;
+            translationText.Text = words[index].TranslationWord;
+            transcriptionText.Text = words[index].Transcription;
+            referencesText.Text = words[index].Reference;
+            noteText.Text = words[index].Examples;
+        }
 
+        private void Update_Click(object sender, EventArgs e)
+        {
+            int index = englishWordsList.SelectedIndex;
+            if (index == -1)
+            {
+                return;
+            }
+            words[index].EnglishWord = englishText.Text;
+            words[index].TranslationWord= translationText.Text;
+            words[index].Transcription = transcriptionText.Text;
+            words[index].Reference = referencesText.Text;
+            words[index].Examples = noteText.Text;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -44,21 +93,13 @@ namespace MyVocabulary
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
 
         }
 
-        private void ViewForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            StreamWriter fileWriter = new StreamWriter("vocabuary.txt");
-            foreach (var item in words)
-            {
-                fileWriter.WriteLine
-        ($"{item.EnglishWord}|{item.TranslationWord}|{item.Transcription}|{item.Reference}|{item.Examples}");
-            }
-            fileWriter.Close();
-        }
+        private void ViewForm_FormClosed(object sender, FormClosedEventArgs e) => words.WriteFile();
+
 
         private void resetbutton_Click(object sender, EventArgs e)
         {
@@ -68,52 +109,34 @@ namespace MyVocabulary
             referencesText.Clear();
             noteText.Clear();
         }
-    }
-    public class Word
-    {
-        string englishWord;
-        string translationWord;
-        public string Transcription { get; set; }
-        public string Reference { get; set; }
-        public string Examples { get; set; }
 
-        public string EnglishWord
+        private void Delbutton_Click(object sender, EventArgs e)
         {
-            get => englishWord;
-            set
+            int index = englishWordsList.SelectedIndex;
+
+            if (index != -1)
             {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new Exception("Empty english word");
-                }
-                else
-                    englishWord = value;
+                englishWordsList.Items.RemoveAt(index);
+                words.DelItem(index);
             }
-        }
-        public string TranslationWord
-        {
-            get => translationWord;
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new Exception("Empty translation word");
-                }
-                else
-                    translationWord = value;
-            }
-        }
-        public Word(string eng, string transl, string scrip, string refer, string note)
-        {
-            EnglishWord = eng;
-            TranslationWord = transl;
-            Transcription = scrip;
-            Reference = refer;
-            Examples = note;
+            else
+                MessageBox.Show("Список пуст");
         }
 
+        // 
+        private Button CreateButton(string name, Point location, Size size, EventHandler handler)
+        {
+            Button button = new Button();
+            button.Text = name;
+            button.Location = location;
+            button.Size = size;
+            button.Click += handler;
+            return button;
+        }
     }
+}
+   
               
-    }
+    
 
        
