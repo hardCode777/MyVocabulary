@@ -34,8 +34,17 @@ namespace MyVocabulary
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            words.ReadFile();
-            counterLabel.Text = words.Count.ToString();
+            try
+            {
+                words.ReadFile();
+                counterLabel.Text = words.Count.ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ошибка чтения файла") ;
+            }
+           
         }
 
         private void exerciseButton_Click(object sender, EventArgs e)

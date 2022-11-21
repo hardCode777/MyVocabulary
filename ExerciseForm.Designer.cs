@@ -33,6 +33,8 @@ namespace MyVocabulary
             this.trueFalseLable = new System.Windows.Forms.Label();
             this.exerciseTextArea = new System.Windows.Forms.TextBox();
             this.languageCheckBox = new System.Windows.Forms.CheckBox();
+            this.compareButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListExercise
@@ -50,7 +52,7 @@ namespace MyVocabulary
             this.trueFalseLable.AutoSize = true;
             this.trueFalseLable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.trueFalseLable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.trueFalseLable.Location = new System.Drawing.Point(436, 34);
+            this.trueFalseLable.Location = new System.Drawing.Point(425, 39);
             this.trueFalseLable.Name = "trueFalseLable";
             this.trueFalseLable.Size = new System.Drawing.Size(132, 23);
             this.trueFalseLable.TabIndex = 2;
@@ -59,17 +61,16 @@ namespace MyVocabulary
             // exerciseTextArea
             // 
             this.exerciseTextArea.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exerciseTextArea.Location = new System.Drawing.Point(361, 117);
-            this.exerciseTextArea.Multiline = true;
+            this.exerciseTextArea.Location = new System.Drawing.Point(348, 96);
             this.exerciseTextArea.Name = "exerciseTextArea";
-            this.exerciseTextArea.Size = new System.Drawing.Size(294, 60);
+            this.exerciseTextArea.Size = new System.Drawing.Size(294, 32);
             this.exerciseTextArea.TabIndex = 3;
             // 
             // languageCheckBox
             // 
             this.languageCheckBox.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.languageCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.languageCheckBox.Location = new System.Drawing.Point(457, 240);
+            this.languageCheckBox.Location = new System.Drawing.Point(434, 268);
             this.languageCheckBox.Name = "languageCheckBox";
             this.languageCheckBox.Size = new System.Drawing.Size(104, 45);
             this.languageCheckBox.TabIndex = 4;
@@ -78,11 +79,34 @@ namespace MyVocabulary
             this.languageCheckBox.UseVisualStyleBackColor = true;
             this.languageCheckBox.CheckedChanged += new System.EventHandler(this.languageCheckBox_CheckedChanged);
             // 
+            // compareButton
+            // 
+            this.compareButton.Location = new System.Drawing.Point(447, 190);
+            this.compareButton.Name = "compareButton";
+            this.compareButton.Size = new System.Drawing.Size(75, 23);
+            this.compareButton.TabIndex = 5;
+            this.compareButton.Text = "COMPARE";
+            this.compareButton.UseVisualStyleBackColor = true;
+            this.compareButton.Click += new System.EventHandler(this.compareButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(558, 149);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 6;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // ExerciseForm
             // 
+            this.AcceptButton = this.compareButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 450);
+            this.ClientSize = new System.Drawing.Size(674, 450);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.compareButton);
             this.Controls.Add(this.languageCheckBox);
             this.Controls.Add(this.exerciseTextArea);
             this.Controls.Add(this.trueFalseLable);
@@ -103,5 +127,7 @@ namespace MyVocabulary
         private System.Windows.Forms.Label trueFalseLable;
         private System.Windows.Forms.TextBox exerciseTextArea;
         private System.Windows.Forms.CheckBox languageCheckBox;
+        private System.Windows.Forms.Button compareButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }

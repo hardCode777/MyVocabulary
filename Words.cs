@@ -36,7 +36,8 @@ namespace MyVocabulary
             for (int i = 0; i < words.Count; i++)
             {
                 fileWriter.WriteLine
-               ($"{words[i].EnglishWord}|{words[i].TranslationWord}|{words[i].Transcription}|{words[i].Reference}|{words[i].Examples}");
+               ($"{words[i].EnglishWord}|{words[i].TranslationWord}|{words[i].Transcription}|" +
+               $"{words[i].Reference}|{words[i].Examples}|{words[i].Date}");
             }
             fileWriter.Close();
         }
@@ -54,7 +55,8 @@ namespace MyVocabulary
                 }
                 else
                 {
-                    Word word = new Word(items[0], items[1], items[2], items[3], items[04]);
+                    Word word = new Word(items[0], items[1], items[2], items[3], items[4], 
+                        Convert.ToDateTime(items[5]) );
                     words.Add(word);
                 }
                 stringS = reader.ReadLine();
@@ -70,6 +72,10 @@ namespace MyVocabulary
         {
             words.Sort(new WorsComparerZA());
         }
+        public void SortDate()
+        {
+            words.Sort(new WordsComparerDate());
+        }
 
         //public IEnumerator <Words>GetEnumerator() => (Word)words.GetEnumerator();
         //IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -83,6 +89,8 @@ namespace MyVocabulary
         public string Transcription { get; set; }
         public string Reference { get; set; }
         public string Examples { get; set; }
+
+        public DateTime Date { get; set; } 
 
         public string EnglishWord
         {
@@ -118,8 +126,13 @@ namespace MyVocabulary
             Transcription = scrip;
             Reference = refer;
             Examples = note;
+            Date = DateTime.Now;
         }
-        
+        public Word(string eng, string transl, string scrip, string refer, string note, DateTime date)
+            :this (eng, transl, scrip, refer, note)
+        {
+            Date = date;
+        }
     }
     class WorsComparerAZ : IComparer<Word>
     {
@@ -133,6 +146,13 @@ namespace MyVocabulary
         public int Compare(Word w1, Word w2)
         {
             return - string.Compare(w1.EnglishWord, w2.EnglishWord); //
+        }
+    }
+    class WordsComparerDate : IComparer<Word>
+    {
+        public int Compare (Word w1, Word w2)
+        {
+            return w1.Date.CompareTo(w2.Date);
         }
     }
 

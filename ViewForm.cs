@@ -31,6 +31,7 @@ namespace MyVocabulary
             sortButton = CreateCB(new Point(x, y), new Size(70, 40), ComboBox_SelectedIndexChanged);
             sortButton.Items.Add("A-z");
             sortButton.Items.Add("Z-a");
+            sortButton.Items.Add("Дата");
             //sortButton.Items.Add
             this.Controls.Add(sortButton);
             //
@@ -156,6 +157,9 @@ namespace MyVocabulary
                     break;
                 case 1:
                     words.SortZa();
+                    break;
+                case 2:
+                    words.SortDate();
                     break;
             }
             LoadList();
