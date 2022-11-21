@@ -21,14 +21,14 @@ namespace MyVocabulary
 
             InitializeComponent();
             //
-            int x = Delbutton.Left;
+            int x = englishWordsList.Right + 45; 
             int y = Delbutton.Top - 45;
-            upDate = CreateButton("Update",new Point(x,y), new Size(64,40), Update_Click);
+            upDate = CreateButton("Update",new Point(x,y), new Size(75,40), Update_Click);
             this.Controls.Add(upDate);
             //
-            y = resetbutton.Top - 45;
-            x = upDate.Right;
-            sortButton = CreateCB(new Point(x, y), new Size(70, 40), ComboBox_SelectedIndexChanged);
+            x = upDate.Right + 105;
+            y = Delbutton.Top - 45;
+            sortButton = CreateCB(new Point(x, y), new Size(120, 30), ComboBox_SelectedIndexChanged);
             sortButton.Items.Add("A-z");
             sortButton.Items.Add("Z-a");
             sortButton.Items.Add("Дата");
