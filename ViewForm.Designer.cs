@@ -37,7 +37,7 @@ namespace MyVocabulary
             this.referencesText = new System.Windows.Forms.TextBox();
             this.noteText = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
-            this.resetbutton = new System.Windows.Forms.Button();
+            this.clearbutton = new System.Windows.Forms.Button();
             this.Delbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,7 +65,6 @@ namespace MyVocabulary
             this.translationText.Name = "translationText";
             this.translationText.Size = new System.Drawing.Size(294, 32);
             this.translationText.TabIndex = 2;
-            
             // 
             // transcriptionText
             // 
@@ -74,7 +73,6 @@ namespace MyVocabulary
             this.transcriptionText.Name = "transcriptionText";
             this.transcriptionText.Size = new System.Drawing.Size(294, 32);
             this.transcriptionText.TabIndex = 3;
-            
             // 
             // referencesText
             // 
@@ -92,7 +90,6 @@ namespace MyVocabulary
             this.noteText.Name = "noteText";
             this.noteText.Size = new System.Drawing.Size(294, 67);
             this.noteText.TabIndex = 5;
-            
             // 
             // addButton
             // 
@@ -105,16 +102,16 @@ namespace MyVocabulary
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addNewWord);
             // 
-            // resetbutton
+            // clearbutton
             // 
-            this.resetbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.resetbutton.Location = new System.Drawing.Point(594, 361);
-            this.resetbutton.Name = "clearbutton";
-            this.resetbutton.Size = new System.Drawing.Size(75, 46);
-            this.resetbutton.TabIndex = 7;
-            this.resetbutton.Text = "Clear";
-            this.resetbutton.UseVisualStyleBackColor = true;
-            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
+            this.clearbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearbutton.Location = new System.Drawing.Point(594, 361);
+            this.clearbutton.Name = "clearbutton";
+            this.clearbutton.Size = new System.Drawing.Size(75, 46);
+            this.clearbutton.TabIndex = 7;
+            this.clearbutton.Text = "Clear";
+            this.clearbutton.UseVisualStyleBackColor = true;
+            this.clearbutton.Click += new System.EventHandler(this.resetbutton_Click);
             // 
             // Delbutton
             // 
@@ -136,7 +133,7 @@ namespace MyVocabulary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 450);
             this.Controls.Add(this.Delbutton);
-            this.Controls.Add(this.resetbutton);
+            this.Controls.Add(this.clearbutton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.noteText);
             this.Controls.Add(this.referencesText);
@@ -163,7 +160,7 @@ namespace MyVocabulary
         private System.Windows.Forms.TextBox referencesText;
         private System.Windows.Forms.TextBox noteText;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button resetbutton;
+        private System.Windows.Forms.Button clearbutton;
         private System.Windows.Forms.Button Delbutton;
     }
 }

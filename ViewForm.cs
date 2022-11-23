@@ -91,6 +91,12 @@ namespace MyVocabulary
         {
             try
             {
+                if (englishWordsList.Items.Contains(englishText.Text))
+                {
+                    
+                    throw new Exception("Dublicat!");
+
+                }
                 Word word = new Word(englishText.Text, translationText.Text,
                 transcriptionText.Text, referencesText.Text, noteText.Text);
                 words.Add(word);
@@ -99,7 +105,7 @@ namespace MyVocabulary
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
+                clearbutton.PerformClick();
             }
 
         }
