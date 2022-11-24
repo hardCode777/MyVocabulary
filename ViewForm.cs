@@ -24,6 +24,7 @@ namespace MyVocabulary
             int x = englishWordsList.Right + 45; 
             int y = Delbutton.Top - 45;
             upDate = CreateButton("Update",new Point(x,y), new Size(75,40), Update_Click);
+            upDate.TabStop = false;
             this.Controls.Add(upDate);
             //
             x = upDate.Right + 105;
@@ -33,6 +34,7 @@ namespace MyVocabulary
             sortButton.Items.Add("Z-a");
             sortButton.Items.Add("Дата");
             //sortButton.Items.Add
+            sortButton.TabStop = false; 
             this.Controls.Add(sortButton);
             //
             englishWordsList.SelectedIndexChanged += EnglishWordsList_SelectedIndexChanged; // eventhandler

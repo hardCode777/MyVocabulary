@@ -49,6 +49,7 @@ namespace MyVocabulary
             this.englishWordsList.Name = "englishWordsList";
             this.englishWordsList.Size = new System.Drawing.Size(310, 409);
             this.englishWordsList.TabIndex = 0;
+            this.englishWordsList.TabStop = false;
             // 
             // englishText
             // 
