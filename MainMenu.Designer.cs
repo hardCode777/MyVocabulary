@@ -33,16 +33,18 @@ namespace MyVocabulary
             this.viewButton = new System.Windows.Forms.Button();
             this.exerciseButton = new System.Windows.Forms.Button();
             this.counterLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // greetings
             // 
             this.greetings.AutoSize = true;
-            this.greetings.Location = new System.Drawing.Point(210, 83);
+            this.greetings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.greetings.Location = new System.Drawing.Point(158, 71);
             this.greetings.Name = "greetings";
-            this.greetings.Size = new System.Drawing.Size(77, 15);
+            this.greetings.Size = new System.Drawing.Size(203, 42);
             this.greetings.TabIndex = 0;
-            this.greetings.Text = "Приветствие";
+            this.greetings.Text = "      Congratulations !!!\r\nYou have already learned";
             // 
             // viewButton
             // 
@@ -70,17 +72,32 @@ namespace MyVocabulary
             // 
             // counterLabel
             // 
-            this.counterLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.counterLabel.Location = new System.Drawing.Point(196, 160);
+            this.counterLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.counterLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.counterLabel.ForeColor = System.Drawing.Color.Red;
+            this.counterLabel.Location = new System.Drawing.Point(170, 128);
+            this.counterLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.counterLabel.Name = "counterLabel";
-            this.counterLabel.Size = new System.Drawing.Size(109, 23);
+            this.counterLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.counterLabel.Size = new System.Drawing.Size(50, 27);
             this.counterLabel.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(251, 128);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "words";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.counterLabel);
             this.Controls.Add(this.exerciseButton);
             this.Controls.Add(this.viewButton);
@@ -102,6 +119,7 @@ namespace MyVocabulary
         private System.Windows.Forms.Button viewButton;
         private System.Windows.Forms.Button exerciseButton;
         private System.Windows.Forms.Label counterLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace MyVocabulary
 {
@@ -66,18 +67,48 @@ namespace MyVocabulary
         }
         public void SortAz()
         {
-            words.Sort(new WorsComparerAZ());
+            //words.Sort(new WorsComparerAZ());
+            words.Sort((w1, w2) => string.Compare(w1.EnglishWord, w2.EnglishWord));
         }
         public void SortZa()
         {
-            words.Sort(new WorsComparerZA());
+            //words.Sort(new WorsComparerZA());
+            words.Sort((w2, w1) => string.Compare(w1.EnglishWord, w2.EnglishWord));
         }
-        public void SortDate()
+        public void SortDateDown()
         {
-            words.Sort(new WordsComparerDate());
+            //words.Sort(new WordsComparerDate());
+            words.Sort((w1, w2) => w1.Date.CompareTo(w2.Date));
         }
-
-        //public IEnumerator <Words>GetEnumerator() => (Word)words.GetEnumerator();
+        public void SortDateUp()
+        {
+            //words.Sort(new WordsComparerDate());
+            words.Sort((w1, w2) => w2.Date.CompareTo(w1.Date));
+        }
+        public void Ramdomize()  //!!!!!!!!!!!!
+        {
+            for (int i = 0; i < words.Count-2; i++)
+            {
+                Word temp;
+                if (i%2==0 || i%3==0)
+                {
+                    temp = words[i];
+                    words[i] = words[i + 1];
+                    words[i+1] = temp;
+                }
+                for (int j = words.Count-1; j > 0; j--)
+                {
+                    if (i%5==0 || i%4==0)
+                    {
+                        temp = words[j];
+                        words[j] = words[j - 1];
+                        words[j - 1] = temp;
+                    }
+                }
+               
+            }
+        }
+        public IEnumerator GetEnumerator() => words.GetEnumerator();
         //IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     }
@@ -133,27 +164,29 @@ namespace MyVocabulary
         {
             Date = date;
         }
+
     }
-    class WorsComparerAZ : IComparer<Word>
-    {
-        public int Compare (Word w1, Word w2)
-        {
-            return  string.Compare(w1.EnglishWord, w2.EnglishWord); //
-        }
-    }
-    class WorsComparerZA : IComparer<Word>
-    {
-        public int Compare(Word w1, Word w2)
-        {
-            return - string.Compare(w1.EnglishWord, w2.EnglishWord); //
-        }
-    }
-    class WordsComparerDate : IComparer<Word>
-    {
-        public int Compare (Word w1, Word w2)
-        {
-            return w1.Date.CompareTo(w2.Date);
-        }
-    }
+
+    //class WorsComparerAZ : IComparer<Word>
+    //{
+    //    public int Compare (Word w1, Word w2)
+    //    {
+    //        return  string.Compare(w1.EnglishWord, w2.EnglishWord); //
+    //    }
+    //}
+    //class WorsComparerZA : IComparer<Word>
+    //{
+    //    public int Compare(Word w1, Word w2)
+    //    {
+    //        return - string.Compare(w1.EnglishWord, w2.EnglishWord); //
+    //    }
+    //}
+    //class WordsComparerDate : IComparer<Word>
+    //{
+    //    public int Compare (Word w1, Word w2)
+    //    {
+    //        return w1.Date.CompareTo(w2.Date);
+    //    }
+    //}
 
 }

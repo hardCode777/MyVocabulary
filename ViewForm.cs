@@ -22,17 +22,20 @@ namespace MyVocabulary
             InitializeComponent();
             //
             int x = englishWordsList.Right + 45; 
-            int y = Delbutton.Top - 45;
+            int y = addButton.Top - 45;
             upDate = CreateButton("Update",new Point(x,y), new Size(75,40), Update_Click);
             upDate.TabStop = false;
             this.Controls.Add(upDate);
             //
-            x = upDate.Right + 105;
-            y = Delbutton.Top - 45;
-            sortButton = CreateCB(new Point(x, y), new Size(120, 30), ComboBox_SelectedIndexChanged);
+            x = upDate.Right + 110;
+            y = clearbutton.Top - 45;
+            sortButton = CreateCB("Sort",new Point(x, y), new Size(110, 30), ComboBox_SelectedIndexChanged);
+            
+             
             sortButton.Items.Add("A-z");
             sortButton.Items.Add("Z-a");
-            sortButton.Items.Add("Дата");
+            sortButton.Items.Add("Дата ↓");
+            sortButton.Items.Add("Дата ↑");
             //sortButton.Items.Add
             sortButton.TabStop = false; 
             this.Controls.Add(sortButton);
@@ -47,10 +50,14 @@ namespace MyVocabulary
         public void LoadList()
         {
             englishWordsList.Items.Clear();
-            for (int i = 0; i < words.Count; i++)
+            foreach (Word word in words)
             {
-                englishWordsList.Items.Add(words[i].EnglishWord);
+                englishWordsList.Items.Add(word.EnglishWord);
             }
+            //for (int i = 0; i < words.Count; i++)
+            //{
+            //    englishWordsList.Items.Add(words[i].EnglishWord);
+            //}
             if (englishWordsList.Items.Count > 0)
             {
                 englishWordsList.SelectedIndex = 0;
@@ -147,12 +154,13 @@ namespace MyVocabulary
             button.Click += handler;
             return button;
         }
-        private ComboBox CreateCB(Point location, Size size, EventHandler handler)
+        private ComboBox CreateCB(string name, Point location, Size size, EventHandler handler)
         {
             ComboBox comBox = new ComboBox();
+            comBox.Text = name;
             comBox.Location = location;
             comBox.Size = size;
-            comBox.Click += handler;
+            comBox.SelectedIndexChanged += handler;
             comBox.DropDownStyle = ComboBoxStyle.DropDownList;
             return comBox;
         }
@@ -167,12 +175,25 @@ namespace MyVocabulary
                     words.SortZa();
                     break;
                 case 2:
-                    words.SortDate();
+                    words.SortDateDown();
                     break;
+                case 3:
+                    words.SortDateUp();
+                    break;
+
             }
             LoadList();
         }
 
+        private void referencesText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noteText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
    

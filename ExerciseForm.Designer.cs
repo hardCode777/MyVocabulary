@@ -35,6 +35,7 @@ namespace MyVocabulary
             this.languageCheckBox = new System.Windows.Forms.CheckBox();
             this.compareButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.rundomButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListExercise
@@ -45,6 +46,7 @@ namespace MyVocabulary
             this.ListExercise.Name = "ListExercise";
             this.ListExercise.Size = new System.Drawing.Size(310, 409);
             this.ListExercise.TabIndex = 1;
+            this.ListExercise.SelectedIndexChanged += new System.EventHandler(this.ListExercise_SelectedIndexChanged);
             // 
             // trueFalseLable
             // 
@@ -55,7 +57,7 @@ namespace MyVocabulary
             this.trueFalseLable.Location = new System.Drawing.Point(425, 39);
             this.trueFalseLable.Name = "trueFalseLable";
             this.trueFalseLable.Size = new System.Drawing.Size(132, 23);
-            this.trueFalseLable.TabIndex = 2;
+            this.trueFalseLable.TabIndex = 6;
             this.trueFalseLable.Text = "Верно / Неверно";
             // 
             // exerciseTextArea
@@ -64,16 +66,17 @@ namespace MyVocabulary
             this.exerciseTextArea.Location = new System.Drawing.Point(348, 96);
             this.exerciseTextArea.Name = "exerciseTextArea";
             this.exerciseTextArea.Size = new System.Drawing.Size(294, 32);
-            this.exerciseTextArea.TabIndex = 3;
+            this.exerciseTextArea.TabIndex = 2;
             // 
             // languageCheckBox
             // 
             this.languageCheckBox.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.languageCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.languageCheckBox.Location = new System.Drawing.Point(434, 268);
+            this.languageCheckBox.Location = new System.Drawing.Point(434, 230);
             this.languageCheckBox.Name = "languageCheckBox";
             this.languageCheckBox.Size = new System.Drawing.Size(104, 45);
             this.languageCheckBox.TabIndex = 4;
+            this.languageCheckBox.TabStop = false;
             this.languageCheckBox.Text = "Eng / rus";
             this.languageCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.languageCheckBox.UseVisualStyleBackColor = true;
@@ -81,23 +84,34 @@ namespace MyVocabulary
             // 
             // compareButton
             // 
-            this.compareButton.Location = new System.Drawing.Point(447, 190);
+            this.compareButton.Location = new System.Drawing.Point(363, 160);
             this.compareButton.Name = "compareButton";
-            this.compareButton.Size = new System.Drawing.Size(75, 23);
-            this.compareButton.TabIndex = 5;
+            this.compareButton.Size = new System.Drawing.Size(75, 43);
+            this.compareButton.TabIndex = 3;
             this.compareButton.Text = "COMPARE";
             this.compareButton.UseVisualStyleBackColor = true;
             this.compareButton.Click += new System.EventHandler(this.compareButton_Click);
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(558, 149);
+            this.clearButton.Location = new System.Drawing.Point(539, 160);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 6;
+            this.clearButton.Size = new System.Drawing.Size(75, 43);
+            this.clearButton.TabIndex = 4;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // rundomButton
+            // 
+            this.rundomButton.AutoSize = true;
+            this.rundomButton.Location = new System.Drawing.Point(445, 281);
+            this.rundomButton.Name = "rundomButton";
+            this.rundomButton.Size = new System.Drawing.Size(81, 42);
+            this.rundomButton.TabIndex = 7;
+            this.rundomButton.Text = "Randomize";
+            this.rundomButton.UseVisualStyleBackColor = true;
+            this.rundomButton.Click += new System.EventHandler(this.rundomButton_Click);
             // 
             // ExerciseForm
             // 
@@ -105,6 +119,7 @@ namespace MyVocabulary
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 450);
+            this.Controls.Add(this.rundomButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.compareButton);
             this.Controls.Add(this.languageCheckBox);
@@ -129,5 +144,6 @@ namespace MyVocabulary
         private System.Windows.Forms.CheckBox languageCheckBox;
         private System.Windows.Forms.Button compareButton;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button rundomButton;
     }
 }
